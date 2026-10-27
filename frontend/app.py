@@ -7,7 +7,7 @@ import requests
 # Configuration
 # ---------------------------------------------------------
 
-BACKEND_URL = "http://localhost:7860"
+BACKEND_URL = "https://organic-rotary-phone-r74r547qrgpp35gqr-7860.app.github.dev"
 
 
 # ---------------------------------------------------------

@@ -3,6 +3,7 @@
 from flask import Flask, request, jsonify
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+from pathlib import Path
 
 # Import RAG utility functions
 from rag_utils import retrieve, rag
@@ -13,7 +14,7 @@ from rag_utils import retrieve, rag
 # ---------------------------------------------------------
 
 EMBED_MODEL = "HarishMaths/Hotel-Policy-Embedding"
-VECTORSTORE_PATH = "faiss_index"
+VECTORSTORE_PATH = str(Path(__file__).resolve().parent / "faiss_index")
 
 
 # ---------------------------------------------------------
@@ -213,4 +214,4 @@ def answer():
 # ---------------------------------------------------------
 
 if __name__ == "__main__":
-    rag_api.run(debug=True)
+    rag_api.run(host="0.0.0.0", port=7860, debug=False)
